@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PrestamoRepository extends JpaRepository<Prestamo,Long> {
-    List<Prestamo> findByHerramientaId(Long idHerramienta);
+    List<Prestamo> findByHerramientaId(Long id);
 }

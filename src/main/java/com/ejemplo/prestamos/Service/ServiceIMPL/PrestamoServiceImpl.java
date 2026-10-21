@@ -27,8 +27,8 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     @Transactional
-    public List<Prestamo> listarPorHerramientaId(Long idHerramienta) {
-        return repository.findByHerramientaId(idHerramienta);
+    public List<Prestamo> listarPorHerramientaId(Long id) {
+        return repository.findByHerramientaId(id);
     }
 
 

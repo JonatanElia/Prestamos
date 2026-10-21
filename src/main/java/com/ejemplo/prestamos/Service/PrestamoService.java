@@ -9,7 +9,7 @@ import java.util.List;
 public interface PrestamoService {
     List<Prestamo> listarTodos();
 
-    List<Prestamo> listarPorHerramientaId(Long IdHerramienta);
+    List<Prestamo> listarPorHerramientaId(Long id);
 
     Prestamo registrar(PrestamoRequest request);
 
