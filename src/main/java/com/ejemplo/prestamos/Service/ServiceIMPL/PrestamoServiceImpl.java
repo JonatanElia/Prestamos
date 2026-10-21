@@ -33,13 +33,14 @@ public class PrestamoServiceImpl implements PrestamoService {
 
 
     @Override
+    @Transactional
     public Prestamo registrar(PrestamoRequest request) {
         if (request.cantidad() <= 0) {
             throw new IllegalArgumentException("La cantidad debe ser mayor que cero");
         }
 
-        Herramienta herramienta = herramientaRepository.findById(request.He())
-                .orElseThrow(() -> new IllegalArgumentException("La herramienta no existe"));
+        Herramienta herramienta = herramientaRepository.findById(request.herramientaId())
+                .orElseThrow(() -> new ResourceNoFoundException("La herramienta no existe"));
 
         if (request.cantidad() > herramienta.getCantidad()) {
             throw new IllegalArgumentException("Cantidad superior a las unidades disponibles");
